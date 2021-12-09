@@ -1,0 +1,100 @@
+1. What is Python?
+Python is a high-level, interpreted, general-purpose programming language. Being a general-purpose language, it can be used to build almost any type of application with the right tools/libraries. Additionally, python supports objects, modules, threads, exception-handling, and automatic memory management which help in modeling real-world problems and building applications to solve these problems.
+
+2. What is a dynamically typed language?
+Before we understand a dynamically typed language, we should learn about what typing is. Typing refers to type-checking in programming languages. In a strongly-typed language, such as Python, "1" + 2 will result in a type error since these languages don't allow for "type-coercion" (implicit conversion of data types). On the other hand, a weakly-typed language, such as Javascript, will simply output "12" as result.
+
+Type-checking can be done at two stages -
+
+Static - Data Types are checked before execution.
+Dynamic - Data Types are checked during execution.
+Python is an interpreted language, executes each statement line by line and thus type-checking is done on the fly, during execution. Hence, Python is a Dynamically Typed Language
+
+3. What is Scope in Python?
+Every object in Python functions within a scope. A scope is a block of code where an object in Python remains relevant. Namespaces uniquely identify all the objects inside a program. However, these namespaces also have a scope defined for them where you could use their objects without any prefix. A few examples of scope created during code execution in Python are as follows:
+
+A local scope refers to the local objects available in the current function.
+A global scope refers to the objects available throughout the code execution since their inception.
+A module-level scope refers to the global objects of the current module accessible in the program.
+An outermost scope refers to all the built-in names callable in the program. The objects in this scope are searched last to find the name referenced.
+Note: Local scope objects can be synced with global scope objects using keywords such as global
+
+4. What are lists and tuples? What is the key difference between the two?
+Lists and Tuples are both sequence data types that can store a collection of objects in Python. The objects stored in both sequences can have different data types. Lists are represented with square brackets ['sara', 6, 0.19], while tuples are represented with parantheses ('ansh', 5, 0.97).
+But what is the real difference between the two? The key difference between the two is that while lists are mutable, tuples on the other hand are immutable objects. This means that lists can be modified, appended or sliced on the go but tuples remain constant and cannot be modified in any manner
+
+5. What are global, protected and private attributes in Python?
+Global variables are public variables that are defined in the global scope. To use the variable in the global scope inside a function, we use the global keyword.
+Protected attributes are attributes defined with an underscore prefixed to their identifier eg. _sara. They can still be accessed and modified from outside the class they are defined in but a responsible developer should refrain from doing so.
+Private attributes are attributes with double underscore prefixed to their identifier eg. __sai. They cannot be accessed or modified from the outside directly and will result in an AttributeError if such an attempt is made.
+
+6. What is self in Python?
+Self is a keyword in Python used to define an instance of an object of a class. In Python, it is explicitly used as the first parameter, unlike in Java where it is optional. It helps in distinguishing between the methods and attributes of a class from its local variables.
+
+7. What is __init__?
+__init__ is a contructor method in Python and is automatically called to allocate memory when a new object/instance is created. All classes have a __init__ method associated with them. It helps in distinguishing methods and attributes of a class from local variables.
+
+8. What are unit tests in Python?
+Unit test is a unit testing framework of Python.
+Unit testing means testing different components of software separately. Can you think about why unit testing is important? Imagine a scenario, you are building software that uses three components namely A, B, and C. Now, suppose your software breaks at a point time. How will you find which component was responsible for breaking the software? Maybe it was component A that failed, which in turn failed component B, and this actually failed the software. There can be many such combinations.
+This is why it is necessary to test each and every component properly so that we know which component might be highly responsible for the failure of the software.
+
+9. What is docstring in Python?
+Documentation string or docstring is a multiline string used to document a specific code segment.
+The docstring should describe what the function or method does.
+
+10. What is the difference between Python Arrays and lists?
+Arrays in python can only contain elements of same data types i.e., data type of array should be homogeneous. It is a thin wrapper around C language arrays and consumes far less memory than lists.
+Lists in python can contain elements of different data types i.e., data type of lists can be heterogeneous. It has the disadvantage of consuming large memory.
+
+11. What are Python namespaces? Why are they used?
+A namespace in Python ensures that object names in a program are unique and can be used without any conflict. Python implements these namespaces as dictionaries with 'name as key' mapped to a corresponding 'object as value'. This allows for multiple namespaces to use the same name and map it to a separate object. A few examples of namespaces are as follows:
+
+Local Namespace includes local names inside a function. the namespace is temporarily created for a function call and gets cleared when the function returns.
+Global Namespace includes names from various imported packages/ modules that are being used in the current project. This namespace is created when the package is imported in the script and lasts until the execution of the script.
+Built-in Namespace includes built-in functions of core Python and built-in names for various types of exceptions.
+The lifecycle of a namespace depends upon the scope of objects they are mapped to. If the scope of an object ends, the lifecycle of that namespace comes to an end. Hence, it isn't possible to access inner namespace objects from an outer namespace.
+
+12. What are decorators in Python?
+Decorators in Python are essentially functions that add functionality to an existing function in Python without changing the structure of the function itself. They are represented the @decorator_name in Python and are called in a bottom-up fashion.
+The beauty of the decorators lies in the fact that besides adding functionality to the output of the method, they can even accept arguments for functions and can further modify those arguments before passing it to the function itself. The inner nested function, i.e. 'wrapper' function, plays a significant role here. It is implemented to enforce encapsulation and thus, keep itself hidden from the global scope.
+
+13. How do you copy an object in Python?
+In Python, the assignment statement (= operator) does not copy objects. Instead, it creates a binding between the existing object and the target variable name. To create copies of an object in Python, we need to use the copy module. Moreover, there are two ways of creating copies for the given object using the copy module -
+
+Shallow Copy is a bit-wise copy of an object. The copied object created has an exact copy of the values in the original object. If either of the values is a reference to other objects, just the reference addresses for the same are copied.
+Deep Copy copies all values recursively from source to target object, i.e. it even duplicates the objects referenced by the source object.
+
+14. What are generators in Python?
+Generators are functions that return an iterable collection of items, one at a time, in a set manner. Generators, in general, are used to create iterators with a different approach. They employ the use of yield keyword rather than return to return a generator object.
+
+15. What is PYTHONPATH in Python?
+PYTHONPATH is an environment variable which you can set to add additional directories where Python will look for modules and packages. This is especially useful in maintaining Python libraries that you do not wish to install in the global default location.
+
+16. What is the use of help() and dir() functions?
+help() function in Python is used to display the documentation of modules, classes, functions, keywords, etc. If no parameter is passed to the help() function, then an interactive help utility is launched on the console.
+dir() function tries to return a valid list of attributes and methods of the object it is called upon. It behaves differently with different objects, as it aims to produce the most relevant data, rather than the complete information.
+
+For Modules/Library objects, it returns a list of all attributes, contained in that module.
+For Class Objects, it returns a list of all valid attributes and base attributes.
+With no arguments passed, it returns a list of attributes in the current scope.
+
+
+17. What is the difference between .py and .pyc files?
+.py files contain the source code of a program. Whereas, .pyc file contains the bytecode of your program. We get bytecode after compilation of .py file (source code). .pyc files are not created for all the files that you run. It is only created for the files that you import.
+Before executing a python program python interpreter checks for the compiled files. If the file is present, the virtual machine executes it. If not found, it checks for .py file. If found, compiles it to .pyc file and then python virtual machine executes it.
+Having .pyc file saves you the compilation time
+
+18. How are arguments passed by value or by reference in python?
+Pass by value: Copy of the actual object is passed. Changing the value of the copy of the object will not change the value of the original object.
+Pass by reference: Reference to the actual object is passed. Changing the value of the new object will change the value of the original object.
+In Python, arguments are passed by reference, i.e., reference to the actual object is passed.
+
+19. Explain how to delete a file in Python?
+Use command os.remove(file_name).
+
+20. Is it possible to call parent class without its instance creation?
+Yes, it is possible if the base class is instantiated by other child classes or if the base class is a static method.
+
+21. How is an empty class created in python?
+An empty class does not have any members defined in it. It is created by using the pass keyword (the pass command does nothing in python). We can create objects for this class outside the class.
